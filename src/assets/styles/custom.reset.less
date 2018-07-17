@@ -1,0 +1,391 @@
+@theme-color:#3988ff;
+
+/* global rest vux styles */
+
+/* 包裹在此class下的所有vux的样式会被重置 */
+.g-p{
+  .weui-cell{
+    padding: 10px 12px;
+  }
+  .weui-cells:before,
+  .weui-cells:after{
+    content: none;
+  }
+  .weui-cell:before,
+  .vux-cell-box:not(:first-child):before{
+    left:0;
+    border-color: #f4f4f4; //实际请改成f4f4f4
+  }
+  .vux-1px-b:after,
+  .vux-1px-r:after,
+  .vux-1px-l:before,
+  .vux-1px-t:before{
+    color:#f4f4f4;
+    border-color: #f4f4f4;
+  }
+}
+
+/* 公共样式 */
+.g-fl{
+  float:left;
+}
+.g-fr{
+  float: right;
+}
+.g-text-left{
+  text-align: left;
+}
+.g-text-right{
+  text-align: right;
+}
+.g-text-center{
+  text-align: center;
+}
+.g-txt-overflow {
+  overflow: hidden;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 全局样式 */
+body,input,textarea{
+  font-family: "PingFang SC",Roboto,"Noto Sans CJK SC","Source Han Sans CN","microsoft yahei",Arial,sans-serif;
+  color: #292929;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+*{
+  box-sizing: border-box;
+}
+i{
+  font-style: normal;
+}
+h1,h2,h3,h4,h5,h6,
+.vux-header .vux-header-title{
+  font-weight: 500;
+}
+ul,li,ol,dl,dt,dd{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+input{
+  color: #292929;
+}
+::-webkit-input-placeholder
+{
+  color: #c4c4c4;
+}
+::-webkit-search-cancel-button{
+  -webkit-appearance: none;
+}
+.svg-icon{
+  height: 1em;
+  width: 1em;
+  font-size: 24px;
+}
+.bottom-border{
+  content: '';
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  height:1px;
+  border-top: 1px solid #f4f4f4; //实际改成f4f4f4
+  color: #ddd;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+/* 整体结构样式 */
+.g-p{
+  height: 100%;
+  background: #f4f4f4;
+}
+.g-viewbox{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .rview{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+}
+.g-header{
+  flex: none;
+}
+.g-content{
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+//body,html{
+//  -webkit-overflow-scrolling: touch;
+//}
+
+/* 公共组件样式重写 */
+.g-tabbar{
+  flex: none;
+  &.weui-tabbar{
+    box-shadow: 0 -1px 1px 1px rgba(244, 244, 244, 0.5);
+    background-color: transparent;
+    height: 50px;
+    &:before{
+      content: none;
+    }
+  }
+  .weui-tabbar__icon{
+    height: auto;
+  }
+  .weui-tabbar__item{
+    background: #fff;
+  }
+  .weui-tabbar__label{
+    font-size:12px;
+  }
+}
+.g-group{
+  .vux-label,
+  .vux-cell-primary,
+  .weui-label{
+    font-size: 15px;
+  }
+  .title-label{
+    display: inline-block;
+    width: 120px;
+    position: relative;
+    font-size: 15px;
+  }
+  .z-req:after{
+    content:'*';
+    color: #f11f1f;
+    padding-left: 1px;
+  }
+}
+.g-checker,
+.g-checker-checbox{
+  .item{
+    display: flex;
+    .svg-icon{
+      font-size: 20px;
+      vertical-align: middle;
+    }
+    .default{
+      display: inline-block;
+    }
+    .active{
+      display: none;
+    }
+  }
+  .item-selected{
+    .default{
+      display: none;
+    }
+    .active{
+      display: inline-block;
+    }
+  }
+  .checker-label{
+    flex:none;
+  }
+  .checker-cont{
+    flex:auto;
+    font-size: 18px;
+    color: #292929;
+    vertical-align: middle;
+  }
+}
+.g-checker-checbox{
+  .item{
+    padding: 10px 12px;
+  }
+  .checker-label{
+    margin-right: 15px;
+  }
+  .active{
+    color: #f89b00;
+  }
+}
+.g-datetime-selection{
+  display: flex;
+  .date-selection,
+  .time-selection{
+    &.z-selected{
+      .weui-cell_access .weui-cell__ft{
+        padding-right: 0;
+      }
+      .weui-cell_access .weui-cell__ft:after{
+        content: none;
+      }
+    }
+  }
+  .vux-cell-value{
+    font-size: 15px;
+    color: #c4c4c4;
+    white-space: nowrap;
+  }
+  .date-selection{
+    flex: auto;
+    .weui-cell_access .weui-cell__ft{
+      text-align: left;
+      margin-right:  5px;
+    }
+  }
+  .time-selection{
+    min-width: 40%;
+    flex: none;
+    @media screen and (max-width: 320px){
+      min-width: 64px;
+    }
+    .weui-cell_access .weui-cell__ft{
+      text-align: left;
+    }
+  }
+  .weui-cell{
+    padding: 10px 0;
+    min-height: 44px;
+  }
+  .vux-calendar:before{
+    content: none;
+  }
+}
+.g-selection-wrap{
+  position: relative;
+  .title{
+    height: 40px;
+    padding: 5px 12px;
+    position: relative;
+    background: #fff;
+    .icon-close{
+      font-size: 20px;
+    }
+    .btn-ok{
+      color: @theme-color;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+  .content{
+    position: absolute;
+    top: 41px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+}
+.g-checkbox-list{
+  .checkbox-item{
+    padding: 10px 12px;
+    line-height: 24px;
+    position: relative;
+    &:after{
+      .bottom-border();
+    }
+    .icon{
+      margin-right: 5px;
+      float: left;
+      .default{
+        color: #999;
+        display: table-cell;
+      }
+      .active{
+        color: #f89b00;
+        display: none;
+      }
+    }
+    .cont{
+      color: initial;
+      font-size: 15px;
+    }
+    &.active{
+      .icon{
+        .default{
+          display: none;
+        }
+        .active{
+          display: table-cell;
+        }
+      }
+    }
+  }
+}
+.g-tab{
+  height: 40px;
+  display: flex;
+  &>.tab-item{
+    flex: none;
+    width: 25%;
+    font-size: 18px;
+    color: #666;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    &.active{
+      color: #fff;
+      background: @theme-color;
+      font-weight: 700;
+    }
+  }
+}
+.g-search-bar{
+  position: relative;
+  padding: 8px 13px;
+  form{
+    width: 100%;
+    display: flex;
+  }
+  input[type="search"]{
+    border:0;
+    line-height: 24px;
+    height: 32px;
+    padding: 4px 10px 4px 38px;
+    border-radius: 5px;
+    outline:none;
+    flex: auto;
+    font-size: 15px;
+  }
+  span{
+    flex: none;
+    width: 3em;
+    color: @theme-color;
+    line-height: 32px;
+    text-align: center;
+    margin-right: -0.5em;
+  }
+  .icon-search{
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    font-size: 18px;
+    color: #c4c4c4;
+  }
+}
+.g-btn-fix-bottom{
+  position: fixed;
+  right: 15px;
+  bottom: 60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  color: #fefeff;
+  background: @theme-color;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  vertical-align: middle;
+}

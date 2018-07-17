@@ -1,0 +1,354 @@
+.ju-create-mode-cell{
+  &.weui-cell{
+    padding-top: 0;
+    padding-bottom: 0;
+    .title-label{
+      padding-top: 10px;
+    }
+  }
+  .mode-content-item{
+    .random-wrap{
+      &>li{
+        display: flex;
+        padding: 1px 0 0 0;
+        &>span:first-child{
+          flex: none;
+          width: 1em;
+          margin-right: 5px;
+          line-height: 24px;
+          padding: 11px 0 0 0;
+          color: #292929;
+        }
+        &>span:last-child{
+          flex: auto;
+        }
+      }
+    }
+  }
+}
+.ju-create-radio{
+  .vux-checker-item{
+    padding: 10px 0;
+    position: relative;
+    &:after{
+      .bottom-border();
+    }
+  }
+  .vux-checker-item:nth-child(4):after{
+    content: none;
+  }
+}
+.ju-create-btns{
+  padding: 40px 55px;
+  background: #f4f4f4;
+}
+.ju-create-wrap{
+  .deadline-wrap{
+    margin:-10px 0;
+    .weui-cells:after{
+      content:none;
+    }
+  }
+  .selected-staff{
+    height: 24px;
+    position: relative;
+    &>p{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      .g-txt-overflow();
+      font-size: 18px;
+      color: #292929;
+    }
+  }
+}
+.ju-staff-selection-wrap{
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
+  .staff-selected{
+    flex: none;
+    padding: 0 2px;
+    text-align: justify;
+    background: #fff;
+    max-height: 80px;
+    position: relative;
+    overflow: hidden;
+    &.z-showmore{
+      height: auto;
+      max-height: none;
+    }
+    .cont{
+      font-size: 0;
+      &>span{
+        display: inline-block;
+        font-size: 15px;
+        color: @theme-color;
+        margin: 0 10px;
+        vertical-align: top;
+        line-height: 40px;
+      }
+    }
+    .more{
+      position: absolute;
+      right: 5px;
+      bottom: 0;
+      height: 40px;
+      width: 64px;
+      background: #fff;
+      line-height: 40px;
+      text-align: center;
+      span{
+        display: inline-block;
+        color: @theme-color;
+      }
+      &.z-showmore{
+        position: static;
+        width: 2em;
+      }
+    }
+  }
+  .departments{
+    flex: none;
+    margin: 4px 0;
+    height: 44px;
+    background: #fff;
+    font-size: 15px;
+    padding: 10px 12px;
+    &>a,&>span{
+      display: inline-block;
+      line-height: 22px;
+      &.z-active{
+        color: @theme-color;
+      }
+    }
+  }
+  .sel-list{
+    flex: auto;
+    overflow: scroll;
+    background:#fff;
+    .weui-cell__ft{
+      color: #292929;
+      font-size: 15px;
+    }
+  }
+}
+.ju-todolist,
+.ju-querylist{
+  .weui-cell_access .weui-cell__ft{
+    padding: 0;
+  }
+  .weui-cell_access .weui-cell__ft:after{
+    content:none;
+  }
+  h5{
+    color: #292929;
+    font-size: 18px;
+    width: 90vw;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    text-overflow: ellipsis;
+  }
+  .time, .person{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    &>span{
+      flex: none;
+    }
+  }
+  .time{
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .person{
+    font-size: 15px;
+    line-height: 1.8;
+    color: #292929;
+  }
+  .warning{
+    color: #ff9b67;
+  }
+}
+.ju-todo-detail{
+  position: relative;
+  padding-bottom: 40px;
+  .weui-cell__ft.vux-cell-align-left{
+    color: #292929;
+  }
+  .weui-cell__ft.vux-cell-align-left,
+  .vux-label{
+    line-height: 20px;
+  }
+  .weui-textarea{
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .btn-check{
+    color: @theme-color;
+    font-size: 15px;
+    padding: 5px;
+    margin: -5px;
+  }
+  .cont-wrap{
+    position: relative;
+    height: 20px;
+    .cont{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      .g-txt-overflow();
+    }
+    .btn-check{
+      position: absolute;
+      right: 0;
+    }
+  }
+  .unhandle-wrap{
+    .cont{
+      right: 2.3em;
+    }
+  }
+}
+.ju-detail-popup{
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  .cont{
+    position:absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  &>.title{
+    font-size: 15px;
+    line-height: 22px;
+    padding: 10px 11px;
+    display: flex;
+    justify-content: space-between;
+    .close{
+      font-size: 14px;
+    }
+  }
+}
+.ju-detail-unhandle-list,
+.ju-detail-opinion-list{
+  &>.item{
+    margin-bottom: 3px;
+    &>.weui-cells__title{
+      background: #d7e7ff;
+      color: #292929;
+      margin: 0;
+      padding: 4px 12px;
+      margin-bottom: 3px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .weui-cell__ft{
+      color: #292929;
+    }
+    &>.weui-cells>.weui-cell{
+      padding: 3px 12px;
+      font-size: 15px;
+    }
+  }
+}
+.ju-detail-opinion-list{
+  .title-label{
+    position: absolute;
+    top: 5px;
+    width: auto;
+  }
+}
+.ju-query-top{
+  padding-bottom: 4px;
+}
+.ju-query-wrap{
+  position: relative;
+  .ju-query-cont{
+    width: 100%;
+    position: absolute;
+    top: 92px;
+    bottom: 44px;
+    overflow-y: scroll;
+  }
+  .g-checkbox-list .checkbox-item:after{
+    content: none;
+  }
+  &.z-export{
+  }
+}
+.ju-querylist{
+  padding-bottom: 6px;
+  &.z-export{
+    padding-bottom: 0;
+    .cell-item-with-check>.left-checkbox{
+      width: 44px;
+    }
+  }
+  .cell-item-with-check{
+    width: auto;
+    display: flex;
+    .left-checkbox{
+      flex: none;
+      width: 0.1px;
+      transition: width 300ms;
+      overflow: hidden;
+    }
+    .right-cont{
+      flex: none;
+      width: 100%;
+    }
+    .checkbox-item{
+      padding: 18px 0 0 0;
+    }
+  }
+}
+.ju-query-check-opt{
+  background: #fff;
+  height: 1px;
+  position: fixed !important;
+  bottom: -1px;
+  width: 100%;
+  transition: height 300ms;
+  &.z-export{
+    height: 44px;
+    bottom: 0;
+  }
+  .checkbox-item{
+    float: left;
+    width: 120px;
+    .cont{
+      margin-left: 6px;
+    }
+  }
+  .opts{
+    float: right;
+    .ok,.cancel{
+      float: right;
+      display: inline-block;
+      width: 88px;
+      font-size: 18px;
+      text-align: center;
+      line-height: 44px;
+    }
+    .ok{
+      background: @theme-color;
+      color: #fff;
+      font-weight: 700;
+    }
+    .cancel{
+      background: #fff;
+      color: #666;
+    }
+  }
+}
